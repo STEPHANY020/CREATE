@@ -1,0 +1,394 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap');
+
+:root {
+    --purple: #7964b4;
+    --pink: #d78fae;
+    --dark: #332c48;
+    --background: #f7f6fa;
+    --white: #ffffff;
+    --text: #252236;
+    --muted: #918b9c;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'DM Sans', sans-serif;
+    background: var(--background);
+    color: var(--text);
+}
+
+.topbar {
+    height: 70px;
+    background: white;
+    border-bottom: 1px solid #eceaf2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4%;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.brand {
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--purple);
+}
+
+.top-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+#saveState {
+    font-size: 11px;
+    color: #8c8799;
+}
+
+.btn {
+    border: none;
+    padding: 12px 17px;
+    border-radius: 9px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: .2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.primary {
+    background: var(--dark);
+    color: white;
+}
+
+.ghost {
+    background: #f1eff6;
+    color: var(--dark);
+}
+
+.app {
+    display: grid;
+    grid-template-columns: 245px 1fr;
+    max-width: 1600px;
+    margin: auto;
+}
+
+.sidebar {
+    background: white;
+    padding: 35px 22px;
+    border-right: 1px solid #eceaf2;
+    min-height: calc(100vh - 70px);
+    position: sticky;
+    top: 70px;
+    height: calc(100vh - 70px);
+}
+
+.sidebar h2 {
+    font-family: 'Playfair Display';
+    font-size: 23px;
+}
+
+.sidebar p {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.sidebar nav {
+    display: grid;
+    gap: 12px;
+    margin-top: 40px;
+}
+
+.sidebar nav a {
+    text-decoration: none;
+    color: var(--dark);
+    background: #f6f3f9;
+    padding: 13px;
+    border-radius: 9px;
+    font-size: 12px;
+}
+
+.side-note {
+    margin-top: 50px;
+    background: #faf5fa;
+    padding: 17px;
+    border-radius: 12px;
+    color: #9875a8;
+    font-size: 12px;
+}
+
+.workspace {
+    padding: 40px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.welcome {
+    margin-bottom: 30px;
+}
+
+.welcome span {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--muted);
+}
+
+.welcome h1 {
+    font-family: 'Playfair Display';
+    font-size: 42px;
+    margin: 12px 0;
+}
+
+.welcome em {
+    color: var(--pink);
+}
+
+.welcome p {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.panel {
+    background: white;
+    padding: 25px;
+    border: 1px solid #eceaf2;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    scroll-margin-top: 90px;
+}
+
+.panel h2 {
+    font-family: 'Playfair Display';
+    font-size: 21px;
+    margin-top: 0;
+    margin-bottom: 22px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #615b6c;
+    margin-bottom: 17px;
+}
+
+input, select, textarea {
+    width: 100%;
+    border: 1px solid #e9e6ee;
+    background: #fdfcfe;
+    border-radius: 8px;
+    padding: 12px;
+    font: 12px 'DM Sans';
+    color: var(--text);
+    outline: none;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--purple);
+    box-shadow: 0 0 0 3px #7964b422;
+}
+
+textarea {
+    resize: vertical;
+    line-height: 1.7;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text-button {
+    border: none;
+    background: transparent;
+    color: var(--purple);
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.character-card {
+    border: 1px solid #eeeaf2;
+    border-radius: 12px;
+    padding: 17px;
+    margin-bottom: 15px;
+    background: #fdfcfe;
+}
+
+.character-card h3 {
+    font-family: 'Playfair Display';
+    margin-top: 0;
+}
+
+.character-card .form-grid {
+    gap: 10px;
+}
+
+.remove-char {
+    background: transparent;
+    color: #a67db0;
+    border: none;
+    cursor: pointer;
+}
+
+.generate {
+    width: 100%;
+    padding: 17px;
+    margin-top: 8px;
+    font-size: 13px;
+}
+
+.canvas-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f7f5f9;
+    padding: 13px;
+    border-radius: 8px;
+    font-size: 11px;
+    margin-bottom: 15px;
+}
+
+.comic-pages {
+    background: #f1eef5;
+    padding: 20px;
+    border-radius: 10px;
+    min-height: 250px;
+}
+
+.empty {
+    text-align: center;
+    padding: 55px 10px;
+    color: var(--muted);
+}
+
+.comic-page {
+    max-width: 700px;
+    margin: auto;
+    background: white;
+    padding: 18px;
+}
+
+.comic-page h3 {
+    text-align: center;
+    font-family: 'Playfair Display';
+}
+
+.comic-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.comic-panel {
+    min-height: 180px;
+    border: 2px solid #332c48;
+    background: linear-gradient(145deg, #d8c4e6, #f1d9e4);
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    overflow: hidden;
+}
+
+.comic-panel:nth-child(3n) {
+    background: linear-gradient(145deg, #c4c1dc, #e8d4e2);
+}
+
+.panel-caption {
+    position: relative;
+    z-index: 1;
+    background: white;
+    border: 1px solid #332c48;
+    margin: 8px;
+    padding: 10px;
+    width: 100%;
+    font-size: 11px;
+    line-height: 1.5;
+    outline: none;
+}
+
+.panel-caption:focus {
+    background: #fff8e9;
+}
+
+.under-canvas {
+    margin-top: 15px;
+}
+
+#downloadBtn {
+    margin-top: 15px;
+}
+
+#downloadBtn:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+dialog {
+    width: min(600px, 90%);
+    border: none;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 15px 50px #0003;
+}
+
+dialog::backdrop {
+    background: #211a2c99;
+}
+
+dialog article {
+    white-space: pre-wrap;
+    line-height: 1.8;
+    max-height: 55vh;
+    overflow: auto;
+    font-size: 13px;
+}
+
+@media(max-width:850px) {
+    .app {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .workspace {
+        padding: 20px;
+    }
+}
+
+@media(max-width:550px) {
+    .form-grid, .comic-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .topbar {
+        padding: 10px;
+    }
+
+    .top-actions #saveState {
+        display: none;
+    }
+
+    .welcome h1 {
+        font-size: 32px;
+    }
+}

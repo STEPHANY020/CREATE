@@ -1,0 +1,197 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MANHWA STUDIO</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+    <a class="brand">✦ MANHWA STUDIO</a>
+    <div class="top-actions">
+        <span id="saveState">● Proyecto local</span>
+        <button class="btn ghost" id="clearBtn">Nuevo proyecto</button>
+        <button class="btn primary" id="exportBtn">Exportar páginas</button>
+    </div>
+</header>
+
+<main class="app">
+
+    <aside class="sidebar">
+        <h2>Mi estudio creativo</h2>
+        <p>Construye tu propio universo.</p>
+
+        <nav>
+            <a href="#universe">01 · Universo</a>
+            <a href="#characters">02 · Personajes</a>
+            <a href="#chapter">03 · Historia</a>
+            <a href="#canvas">04 · Manhwa</a>
+        </nav>
+
+        <div class="side-note">
+            ✧ Tu historia, tus reglas.
+        </div>
+    </aside>
+
+    <section class="workspace">
+
+        <div class="welcome">
+            <span>MANHWA CREATOR / WORKSPACE</span>
+            <h1>Da vida a tu <em>historia.</em></h1>
+            <p>Crea personajes, universos y capítulos desde cero.</p>
+        </div>
+
+        <!-- UNIVERSO -->
+
+        <section class="panel" id="universe">
+            <h2>01. El universo</h2>
+
+            <div class="form-grid">
+
+                <label>
+                    Título del manhwa
+                    <input id="title" placeholder="Nombre de tu historia">
+                </label>
+
+                <label>
+                    Género
+                    <select id="genre">
+                        <option>Romance</option>
+                        <option>BL</option>
+                        <option>GL</option>
+                        <option>Fantasía</option>
+                        <option>Drama</option>
+                        <option>Acción</option>
+                        <option>Omegaverse</option>
+                        <option>Romance histórico</option>
+                    </select>
+                </label>
+
+                <label>
+                    Dinámica
+                    <select id="dynamic">
+                        <option>Alfa, Beta y Omega</option>
+                        <option>Alfa y Omega</option>
+                        <option>Alfa, Beta, Omega y Enigma</option>
+                        <option>Universo libre</option>
+                    </select>
+                </label>
+
+                <label>
+                    Ambientación
+                    <input id="setting" placeholder="Universidad, palacio, Corea...">
+                </label>
+
+            </div>
+
+            <label>
+                Reglas de tu universo
+                <textarea id="rules" placeholder="Describe cómo funciona tu mundo..."></textarea>
+            </label>
+        </section>
+
+        <!-- PERSONAJES -->
+
+        <section class="panel" id="characters">
+
+            <div class="section-heading">
+                <h2>02. Personajes</h2>
+                <button class="text-button" id="addCharacter">
+                    + Añadir personaje
+                </button>
+            </div>
+
+            <div id="charactersList"></div>
+
+        </section>
+
+        <!-- HISTORIA -->
+
+        <section class="panel" id="chapter">
+
+            <h2>03. Crear capítulo</h2>
+
+            <label>
+                ¿Qué sucede en el capítulo 1?
+                <textarea id="plot" rows="6"
+                placeholder="Escribe tu historia aquí. Describe las escenas, encuentros, conflictos, emociones y acontecimientos..."></textarea>
+            </label>
+
+            <label>
+                Diálogos especiales
+                <textarea id="dialogues" rows="4"
+                placeholder="Alfa: No vuelvas a acercarte a mí...&#10;Omega: No eres quien para darme órdenes."></textarea>
+            </label>
+
+            <div class="form-grid">
+
+                <label>
+                    Número de viñetas
+                    <select id="panelCount">
+                        <option value="4">4 viñetas</option>
+                        <option value="6" selected>6 viñetas</option>
+                        <option value="8">8 viñetas</option>
+                        <option value="10">10 viñetas</option>
+                    </select>
+                </label>
+
+                <label>
+                    Estilo artístico
+                    <select id="artStyle">
+                        <option>Manhwa a color</option>
+                        <option>Blanco y negro</option>
+                        <option>Romántico pastel</option>
+                        <option>Fantasía oscura</option>
+                    </select>
+                </label>
+
+            </div>
+
+            <button class="btn primary generate" id="generateBtn">
+                ✦ CREAR MI MANHWA
+            </button>
+
+        </section>
+
+        <!-- RESULTADO -->
+
+        <section class="panel" id="canvas">
+
+            <h2>04. Mi manhwa</h2>
+
+            <div class="canvas-toolbar">
+                <span>✦ VISTA PREVIA</span>
+                <button class="text-button" id="storyBtn">
+                    Ver guion completo
+                </button>
+            </div>
+
+            <div id="comicPages" class="comic-pages">
+                <div class="empty">
+                    <h3>Tu historia comienza aquí ✧</h3>
+                    <p>Completa los datos y crea tu primer capítulo.</p>
+                </div>
+            </div>
+
+            <button class="btn ghost" id="downloadBtn" disabled>
+                Descargar vista previa
+            </button>
+
+        </section>
+
+    </section>
+</main>
+
+<dialog id="storyDialog">
+    <h2 id="dialogTitle">Mi historia</h2>
+    <article id="storyText"></article>
+    <button class="btn primary" id="copyStory">Copiar historia</button>
+    <button class="btn ghost" id="closeDialog">Cerrar</button>
+</dialog>
+
+<script src="script.js"></script>
+</body>
+</html>
